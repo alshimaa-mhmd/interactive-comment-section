@@ -21,20 +21,20 @@ function App() {
   }
   useEffect( function() {
     async function getComments() {
-      const res = await fetch('http://localhost:4000/comments');
+      const res = await fetch('https://mocki.io/v1/52784da7-6a3c-4391-88ef-04f26a7bc29c');
       const data =await res.json();
       console.log(data);
-      setComments(data);
+      setComments(data.comments);
     } 
     getComments()
   }, [setComments])
 
   useEffect( function() {
     async function getUserData() {
-      const res = await fetch('http://localhost:4000/currentUser');
+      const res = await fetch('https://mocki.io/v1/52784da7-6a3c-4391-88ef-04f26a7bc29c');
       const data =await res.json();
       console.log(data);
-      setUserData(data);
+      setUserData(data.currentUser);
     } 
     getUserData()
   }, [setUserData])
